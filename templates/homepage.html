@@ -1,0 +1,21 @@
+{% extends "start.html" %}
+
+{% block conteudo %}
+<hr>
+<h2  style="text-align: center; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" class="display-1"><strong>Requisições de API </strong></h2>
+<hr>
+<h3 style="text-align: center;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"">Top 3 </h3>
+<hr>
+  <div class="row">
+    {% for filme in filmes %}
+      <div class="col-3 mx-5 ">
+        <div class="card" style="width: 400px;" >
+          <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{filme.backdrop_path}}" alt="{{filme.title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{filme.title }}</h5>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
